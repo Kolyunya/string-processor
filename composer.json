@@ -1,0 +1,31 @@
+{
+    "name": "kolyunya/string-processor",
+    "description": "String processor library.",
+    "keywords": [
+        "string",
+        "processor",
+        "parser",
+        "parser"
+    ],
+    "homepage": "https://github.com/Kolyunya/string-processor",
+    "license": "GNU GPL v3.0",
+    "authors": [
+        {
+            "name": "Kolyunya",
+            "email": "oleynikovny@mail.ru",
+            "homepage": "http://github.com/Kolyunya/"
+        }
+    ],
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*",
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kolyunya\\StringProcessor\\": [
+                "sources",
+                "tests"
+            ]
+        }
+    }
+}
