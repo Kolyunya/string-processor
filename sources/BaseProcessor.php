@@ -18,7 +18,8 @@ abstract class BaseProcessor implements ProcessorInterface
      */
     public static function staticProcess($string)
     {
-        $processor = new get_called_class();
+        $processorClass = get_called_class();
+        $processor = new $processorClass();
         $processedString = $processor->process($string);
         return $processedString;
     }
