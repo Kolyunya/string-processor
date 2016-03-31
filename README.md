@@ -3,6 +3,15 @@
 ## Description
 This library is a collection of string processors.
 
+## Installation
+
+This package is [composer-enabled](https://packagist.org/packages/kolyunya/string-processor). Just require it in your composer.json.
+~~~
+"require": {
+    "kolyunya/string-processor": "*"
+}
+~~~
+
 ## Usage
 Each processor implement [ProcessorInterface](https://github.com/Kolyunya/string-processor/blob/master/sources/ProcessorInterface.php) which contains just one method:
 ~~~php
