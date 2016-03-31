@@ -2,13 +2,14 @@
 
 namespace Kolyunya\StringProcessor;
 
+use Kolyunya\StringProcessor\BaseProcessor;
 use Kolyunya\StringProcessor\ProcessorInterface;
 
 /**
  * Converts a string to a "kebabab-case".
  * @author Kolyunya
  */
-class KebabFormatter implements ProcessorInterface
+class KebabFormatter extends BaseProcessor implements ProcessorInterface
 {
     /**
      * @inheritdoc

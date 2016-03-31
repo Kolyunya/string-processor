@@ -2,9 +2,10 @@
 
 namespace Kolyunya\StringProcessor;
 
+use Kolyunya\StringProcessor\BaseProcessor;
 use Kolyunya\StringProcessor\ProcessorInterface;
 
-class Multiprocessor implements ProcessorInterface
+class Multiprocessor extends BaseProcessor implements ProcessorInterface
 {
     /**
      * An array of processors to use while procession.
