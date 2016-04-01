@@ -2,11 +2,11 @@
 
 namespace Kolyunya\StringProcessor\CaseSwitcher;
 
-use Kolyunya\StringProcessor\CaseSwitcher\KebabFormatter;
+use Kolyunya\StringProcessor\CaseSwitcher\SnakeFormatter;
 use Kolyunya\StringProcessor\ProcessorInterface;
 use PHPUnit_Framework_TestCase;
 
-class KebabFormatterTests extends PHPUnit_Framework_TestCase
+class SnakeFormatterTest extends PHPUnit_Framework_TestCase
 {
     /**
      * Kebab formatter processor.
@@ -18,7 +18,7 @@ class KebabFormatterTests extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'some-text-in-kebab-case',
-            'some-text-in-kebab-case'
+            'some_text_in_kebab_case'
         );
     }
 
@@ -26,7 +26,7 @@ class KebabFormatterTests extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'SomeTextInCamelCase',
-            'some-text-in-camel-case'
+            'some_text_in_camel_case'
         );
     }
 
@@ -50,7 +50,7 @@ class KebabFormatterTests extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'some_text_in_underscore_case',
-            'some-text-in-underscore-case'
+            'some_text_in_underscore_case'
         );
     }
 
@@ -58,7 +58,7 @@ class KebabFormatterTests extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'some separate words',
-            'some-separate-words'
+            'some_separate_words'
         );
     }
 
@@ -66,7 +66,7 @@ class KebabFormatterTests extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'Some Separate Words',
-            'some-separate-words'
+            'some_separate_words'
         );
     }
 
@@ -74,7 +74,7 @@ class KebabFormatterTests extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'some-Really_weird Case',
-            'some-really-weird-case'
+            'some_really_weird_case'
         );
     }
 
@@ -82,7 +82,7 @@ class KebabFormatterTests extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'some__string__with__multiple__underscores',
-            'some-string-with-multiple-underscores'
+            'some_string_with_multiple_underscores'
         );
     }
 
@@ -90,7 +90,7 @@ class KebabFormatterTests extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'string_with_a_trailing_underscore_',
-            'string-with-a-trailing-underscore'
+            'string_with_a_trailing_underscore'
         );
     }
 
@@ -98,7 +98,7 @@ class KebabFormatterTests extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             '_string_with_a_leading_underscore',
-            'string-with-a-leading-underscore'
+            'string_with_a_leading_underscore'
         );
     }
 
@@ -106,7 +106,7 @@ class KebabFormatterTests extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'string_with_a_trailing_underscores_____',
-            'string-with-a-trailing-underscores'
+            'string_with_a_trailing_underscores'
         );
     }
 
@@ -114,7 +114,7 @@ class KebabFormatterTests extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             '_____string_with_a_leading_underscores',
-            'string-with-a-leading-underscores'
+            'string_with_a_leading_underscores'
         );
     }
 
@@ -123,7 +123,7 @@ class KebabFormatterTests extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->processor = new KebabFormatter();
+        $this->processor = new SnakeFormatter();
     }
 
     /**

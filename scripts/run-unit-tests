@@ -1,4 +1,2 @@
 #!/bin/sh
-vendor/bin/phpunit \
-    tests/CaseSwitcher/* \
-    tests/* \
+vendor/bin/phpunit tests
