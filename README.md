@@ -1,4 +1,4 @@
-# PHP string processor library
+# PHP string procession library
 
 ## Description
 This library is a collection of string processors.
@@ -28,6 +28,12 @@ Construct a processor and just run `process($string)` on it:
 $processor = new SomeArbitraryProcessor();
 // Configure processor if needed
 $processedString = $processor->process($string);
+~~~
+
+## Quick usage
+You can use a processor without even instantiating it. The `staticProcess($string)` method allows it.
+~~~php
+echo KebabFormatter::staticProcess('snake_case'); // Output: "snake-case"
 ~~~
 
 ## Available processors
