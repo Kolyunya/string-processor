@@ -32,5 +32,5 @@ $processedString = $processor->process($string);
 
 ## Available processors
 Currently the following processors are implemented
-* [KebabFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/KebabFormatter.php) - A processor which converts a string to `the-kebab-case`.
+* [KebabFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/KebabFormatter.php) - A processor which converts a string to `the-kebab-case`.
 * [Multiprocessor](https://github.com/Kolyunya/string-processor/blob/master/sources/Multiprocessor.php) - A processor which combines multiple processors.

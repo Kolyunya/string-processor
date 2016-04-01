@@ -1,8 +1,8 @@
 <?php
 
-namespace Kolyunya\StringProcessor;
+namespace Kolyunya\StringProcessor\CaseSwitcher;
 
-use Kolyunya\StringProcessor\KebabFormatter;
+use Kolyunya\StringProcessor\CaseSwitcher\KebabFormatter;
 use Kolyunya\StringProcessor\ProcessorInterface;
 use PHPUnit_Framework_TestCase;
 
@@ -13,6 +13,14 @@ class KebabFormatterTests extends PHPUnit_Framework_TestCase
      * @var ProcessorInterface
      */
     private $processor;
+
+    public function testFromKebabCase()
+    {
+        $this->performTest(
+            'some-text-in-kebab-case',
+            'some-text-in-kebab-case'
+        );
+    }
 
     public function testFromCamelCase()
     {
@@ -70,6 +78,46 @@ class KebabFormatterTests extends PHPUnit_Framework_TestCase
         );
     }
 
+    public function testFromStringWithMultipleUnderscores()
+    {
+        $this->performTest(
+            'some__string__with__multiple__underscores',
+            'some-string-with-multiple-underscores'
+        );
+    }
+
+    public function testFromStringWithTrailingUnderscore()
+    {
+        $this->performTest(
+            'string_with_a_trailing_underscore_',
+            'string-with-a-trailing-underscore'
+        );
+    }
+
+    public function testFromStringWithLeadingUnderscore()
+    {
+        $this->performTest(
+            '_string_with_a_leading_underscore',
+            'string-with-a-leading-underscore'
+        );
+    }
+
+    public function testFromStringWithTrailingUnderscores()
+    {
+        $this->performTest(
+            'string_with_a_trailing_underscores_____',
+            'string-with-a-trailing-underscores'
+        );
+    }
+
+    public function testFromStringWithLeadingUnderscores()
+    {
+        $this->performTest(
+            '_____string_with_a_leading_underscores',
+            'string-with-a-leading-underscores'
+        );
+    }
+
     /**
      * @inheritdoc
      */
@@ -94,6 +142,6 @@ class KebabFormatterTests extends PHPUnit_Framework_TestCase
     private function performTest($sourceString, $processedStringExpected)
     {
         $processedStringActual = $this->processor->process($sourceString);
-        $this->assertEquals($processedStringActual, $processedStringExpected);
+        $this->assertEquals($processedStringExpected, $processedStringActual);
     }
 }
