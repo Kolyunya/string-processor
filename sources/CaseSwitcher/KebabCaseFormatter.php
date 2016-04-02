@@ -6,27 +6,38 @@ use Kolyunya\StringProcessor\CaseSwitcher\CaseSwitcher;
 use Kolyunya\StringProcessor\ProcessorInterface;
 
 /**
- * Converts a string to a "snake_case".
+ * Converts a string to a "kebabab-case".
  * @author Kolyunya
  */
-class SnakeCase extends CaseSwitcher implements ProcessorInterface
+class KebabCaseFormatter extends CaseSwitcher implements ProcessorInterface
 {
     /**
      * @inheritdoc
      */
-    protected $destinationCase = self::SNAKE_CASE;
+    protected $destinationCase = self::KEBAB_CASE;
+
+    /**
+     * @inheritdoc
+     */
+    protected function processSnakeCase($string)
+    {
+        // Replaces underscores with hyphens.
+        $string = str_replace('_', '-', $string);
+
+        return $string;
+    }
 
     /**
      * @inheritdoc
      */
     protected function processCamelCase($string)
     {
-        // Add underscores before each capital letter
+        // Add hyphens before each capital letter
         // which is not the first letter of the string.
         $pattern = '/(?<!^)[A-Z]/';
         $callback = function ($matches) {
             $match = $matches[0];
-            $replace = "_$match";
+            $replace = "-$match";
             return $replace;
         };
         $string = preg_replace_callback($pattern, $callback, $string);
@@ -40,21 +51,10 @@ class SnakeCase extends CaseSwitcher implements ProcessorInterface
     /**
      * @inheritdoc
      */
-    protected function processKebabCase($string)
-    {
-        // Replaces hyphens with underscores.
-        $string = str_replace('-', '_', $string);
-
-        return $string;
-    }
-
-    /**
-     * @inheritdoc
-     */
     protected function processSentenceCase($string)
     {
-        // Replace spaces with underscores.
-        $string = str_replace(' ', '_', $string);
+        // Replace spaces with hyphens.
+        $string = str_replace(' ', '-', $string);
 
         // Convert the string to the lower case.
         $string = mb_convert_case($string, MB_CASE_LOWER);
@@ -67,39 +67,39 @@ class SnakeCase extends CaseSwitcher implements ProcessorInterface
      */
     protected function processUndefinedCase($string)
     {
+        $string = $this->processSnakeCase($string);
         $string = $this->processCamelCase($string);
-        $string = $this->processKebabCase($string);
         $string = $this->processSentenceCase($string);
-        $string = $this->removeDuplicateUnderscores($string);
-        $string = $this->removeTailUnderscores($string);
+        $string = $this->removeDuplicateHyphens($string);
+        $string = $this->removeTailHyphens($string);
         return $string;
     }
 
     /**
-     * Removes duplicate underscores which will occur while
-     * parsing strings like "Some-Word-In-Strange-Case".
+     * Removes duplicate hyphens which will occur while
+     * parsing strings like "Some_Word_In_Strange_Case".
      * @param string $string String to process.
-     * @return string String with no duplicate underscores.
+     * @return string String with no duplicate hyphens.
      */
-    private function removeDuplicateUnderscores($string)
+    private function removeDuplicateHyphens($string)
     {
-        // Keep removing duplicate underscores while they are present.
-        while (strpos($string, '__') !== false) {
-            $string = str_replace('__', '_', $string);
+        // Keep removing duplicate hyphens while they are present.
+        while (strpos($string, '--') !== false) {
+            $string = str_replace('--', '-', $string);
         }
 
         return $string;
     }
 
     /**
-     * Removes tail underscores.
+     * Removes tail hyphens.
      * @param string $string String to process.
-     * @return string String with no tail underscores.
+     * @return string String with no tail hyphens.
      */
-    private function removeTailUnderscores($string)
+    private function removeTailHyphens($string)
     {
-        // Keep removing tail underscores while they are present.
-        $pattern = '/(^_)|(_$)/';
+        // Keep removing tail hyphens while they are present.
+        $pattern = '/(^-)|(-$)/';
         while (preg_match($pattern, $string) === 1) {
             $string = preg_replace($pattern, '', $string);
         }

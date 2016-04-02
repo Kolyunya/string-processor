@@ -31,14 +31,14 @@ $processedString = $processor->process($string);
 ~~~
 
 ## Quick usage
-You can use a processor without even instantiating it. The static `run($string)` method allows it.
+You can use a processor without even instantiating it. The static `run($string)` method allows it. Note that the processor invoked in such way is default-initialized.
 ~~~php
-echo KebabFormatter::run('snake_case'); // Output: "snake-case"
+echo KebabCaseFormatter::run('snake_case'); // Output: "snake-case"
 ~~~
 
 ## Available processors
 Currently the following processors are implemented
-* [CamelFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/CamelFormatter.php) - A processor which converts a string to the `CamelCase`.
-* [KebabFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/KebabFormatter.php) - A processor which converts a string to the `kebab-case`.
-* [SnakeFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/SnakeFormatter.php) - A processor which converts a string to the `snake_case`.
+* [CamelCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/CamelCaseFormatter.php) - A processor which formats a string to the `CamelCase`.
+* [KebabCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/KebabCaseFormatter.php) - A processor which formats a string to the `kebab-case`.
+* [SnakeCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/SnakeCaseFormatter.php) - A processor which formats a string to the `snake_case`.
 * [Multiprocessor](https://github.com/Kolyunya/string-processor/blob/master/sources/Multiprocessor.php) - A processor which combines multiple processors.
