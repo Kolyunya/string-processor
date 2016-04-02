@@ -16,7 +16,7 @@ abstract class BaseProcessor implements ProcessorInterface
      * @param string $string A string to process.
      * @return string A processed version of the original string.
      */
-    public static function staticProcess($string)
+    public static function run($string)
     {
         $processorClass = get_called_class();
         $processor = new $processorClass();

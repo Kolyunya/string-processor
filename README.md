@@ -31,9 +31,9 @@ $processedString = $processor->process($string);
 ~~~
 
 ## Quick usage
-You can use a processor without even instantiating it. The `staticProcess($string)` method allows it.
+You can use a processor without even instantiating it. The static `run($string)` method allows it.
 ~~~php
-echo KebabFormatter::staticProcess('snake_case'); // Output: "snake-case"
+echo KebabFormatter::run('snake_case'); // Output: "snake-case"
 ~~~
 
 ## Available processors
