@@ -36,6 +36,17 @@ You can use a processor without even instantiating it. The static `run($string)`
 echo KebabCaseFormatter::run('snake_case'); // Output: "snake-case"
 ~~~
 
+## Combining multiple processors
+Suppose you want to convert a stirng to an upper-kebab case. To achieve this you can combine two processors like this:
+~~~php
+$processor = new Multiprocessor([
+    new KebabCaseFormatter(),
+    new UpperCaseFormatter(),
+]);
+echo $processor->process('snake_case'); // Output: "SNAKE-CASE"
+~~~
+Note the the processors order matters. If you pass a kebab formatter as a second processor it will convert the string back to the lower case (normal kebab case).
+
 ## Available processors
 Currently the following processors are implemented
 * [CamelCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/CamelCaseFormatter.php) - A processor which formats a string to the `CamelCase`.
