@@ -3,16 +3,19 @@
 namespace Kolyunya\StringProcessor\CaseSwitcher;
 
 use Kolyunya\StringProcessor\CaseSwitcher\CamelCaseFormatter;
-use Kolyunya\StringProcessor\ProcessorInterface;
-use PHPUnit_Framework_TestCase;
+use Kolyunya\StringProcessor\ProcessorTestCase;
 
-class CamelCaseFormatterTest extends PHPUnit_Framework_TestCase
+class CamelCaseFormatterTest extends ProcessorTestCase
 {
     /**
-     * Kebab formatter processor.
-     * @var ProcessorInterface
+     * @inheritdoc
      */
-    private $processor;
+    protected function getTests()
+    {
+        return array(
+            'snake_case' => 'SnakeCase',
+        );
+    }
 
     public function testFromKebabCase()
     {
@@ -123,25 +126,7 @@ class CamelCaseFormatterTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
+        parent::setUp();
         $this->processor = new CamelCaseFormatter();
-    }
-
-    /**
-     * @inheritdoc
-     */
-    protected function tearDown()
-    {
-        unset($this->processor);
-    }
-
-    /**
-     * Performs an arbitrary test.
-     * @param string $sourceString Source string to process.
-     * @param string $processedStringExpected Expected processed stirng.
-     */
-    private function performTest($sourceString, $processedStringExpected)
-    {
-        $processedStringActual = $this->processor->process($sourceString);
-        $this->assertEquals($processedStringExpected, $processedStringActual);
     }
 }

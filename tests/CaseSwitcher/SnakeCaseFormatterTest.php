@@ -3,17 +3,10 @@
 namespace Kolyunya\StringProcessor\CaseSwitcher;
 
 use Kolyunya\StringProcessor\CaseSwitcher\SnakeCaseFormatter;
-use Kolyunya\StringProcessor\ProcessorInterface;
-use PHPUnit_Framework_TestCase;
+use Kolyunya\StringProcessor\ProcessorTestCase;
 
-class SnakeCaseFormatterTest extends PHPUnit_Framework_TestCase
+class SnakeCaseFormatterTest extends ProcessorTestCase
 {
-    /**
-     * Kebab formatter processor.
-     * @var ProcessorInterface
-     */
-    private $processor;
-
     public function testFromKebabCase()
     {
         $this->performTest(
@@ -124,24 +117,6 @@ class SnakeCaseFormatterTest extends PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->processor = new SnakeCaseFormatter();
-    }
-
-    /**
-     * @inheritdoc
-     */
-    protected function tearDown()
-    {
-        unset($this->processor);
-    }
-
-    /**
-     * Performs an arbitrary test.
-     * @param string $sourceString Source string to process.
-     * @param string $processedStringExpected Expected processed stirng.
-     */
-    private function performTest($sourceString, $processedStringExpected)
-    {
-        $processedStringActual = $this->processor->process($sourceString);
-        $this->assertEquals($processedStringExpected, $processedStringActual);
+        parent::setUp();
     }
 }
