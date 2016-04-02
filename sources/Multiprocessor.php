@@ -5,6 +5,11 @@ namespace Kolyunya\StringProcessor;
 use Kolyunya\StringProcessor\BaseProcessor;
 use Kolyunya\StringProcessor\ProcessorInterface;
 
+/**
+ * Processor which combines multiple processors.
+ * @author Kolyunya
+ */
+
 class Multiprocessor extends BaseProcessor implements ProcessorInterface
 {
     /**
