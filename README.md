@@ -49,7 +49,7 @@ Note the the processors order matters. If you pass a kebab formatter as a second
 
 ## Available processors
 Currently the following processors are implemented
-* Case switchers
+* [Case switchers](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/CaseSwitcher.php)
     * [CamelCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/CamelCaseFormatter.php) - formats a string to the `CamelCase`.
     * [KebabCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/KebabCaseFormatter.php) - formats a string to the `kebab-case`.
     * [SnakeCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/SnakeCaseFormatter.php) - formats a string to the `snake_case`.

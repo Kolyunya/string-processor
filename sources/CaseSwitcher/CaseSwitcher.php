@@ -4,14 +4,14 @@ namespace Kolyunya\StringProcessor\CaseSwitcher;
 
 use Exception;
 use Kolyunya\StringProcessor\BaseProcessor;
+use Kolyunya\StringProcessor\CaseSwitcher\CaseSwitcherInterface;
 
 /**
  * A base class for all case switchers.
  * @author Kolyunya
  */
-abstract class CaseSwitcher extends BaseProcessor
+abstract class CaseSwitcher extends BaseProcessor implements CaseSwitcherInterface
 {
-
     /**
      * A constant for an undefined case.
      */
@@ -50,8 +50,7 @@ abstract class CaseSwitcher extends BaseProcessor
     protected $destinationCase = self::UNDEFINED_CASE;
 
     /**
-     * Sets source case of the string.
-     * @param integer $sourceCase
+     * @inheritdoc
      */
     public function setSourceCase($sourceCase)
     {
