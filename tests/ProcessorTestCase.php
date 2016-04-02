@@ -29,7 +29,7 @@ class ProcessorTestCase extends PHPUnit_Framework_TestCase
      */
     protected function performTest($sourceString, $processedStringExpected)
     {
-        $this->performNonStaticeTst($sourceString, $processedStringExpected);
+        $this->performNonStaticTest($sourceString, $processedStringExpected);
         $this->performStaticTest($sourceString, $processedStringExpected);
     }
 
@@ -38,7 +38,7 @@ class ProcessorTestCase extends PHPUnit_Framework_TestCase
      * @param string $sourceString Source string to process.
      * @param string $processedStringExpected Expected processed stirng.
      */
-    protected function performNonStaticeTst($sourceString, $processedStringExpected)
+    protected function performNonStaticTest($sourceString, $processedStringExpected)
     {
         $processedStringActual = $this->processor->process($sourceString);
         $this->assertEquals($processedStringExpected, $processedStringActual);
