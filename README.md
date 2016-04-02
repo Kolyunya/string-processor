@@ -49,9 +49,9 @@ Note the the processors order matters. If you pass a kebab formatter as a second
 
 ## Available processors
 Currently the following processors are implemented
-* [CamelCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/CamelCaseFormatter.php) - A processor which formats a string to the `CamelCase`.
-* [KebabCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/KebabCaseFormatter.php) - A processor which formats a string to the `kebab-case`.
-* [SnakeCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/SnakeCaseFormatter.php) - A processor which formats a string to the `snake_case`.
-* [UpperCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/UpperCaseFormatter.php) - A processor which formats a string to the `UPPER CASE`.
-* [LowerCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/LowerCaseFormatter.php) - A processor which formats a string to the `lower case`.
-* [Multiprocessor](https://github.com/Kolyunya/string-processor/blob/master/sources/Multiprocessor.php) - A processor which combines multiple processors.
+* [CamelCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/CamelCaseFormatter.php) - formats a string to the `CamelCase`.
+* [KebabCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/KebabCaseFormatter.php) - formats a string to the `kebab-case`.
+* [SnakeCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/SnakeCaseFormatter.php) - formats a string to the `snake_case`.
+* [UpperCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/UpperCaseFormatter.php) - formats a string to the `UPPER CASE`.
+* [LowerCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/LowerCaseFormatter.php) - formats a string to the `lower case`.
+* [Multiprocessor](https://github.com/Kolyunya/string-processor/blob/master/sources/Multiprocessor.php) - combines multiple processors.
