@@ -7,16 +7,6 @@ use Kolyunya\StringProcessor\ProcessorTestCase;
 
 class CamelCaseFormatterTest extends ProcessorTestCase
 {
-    /**
-     * @inheritdoc
-     */
-    protected function getTests()
-    {
-        return array(
-            'snake_case' => 'SnakeCase',
-        );
-    }
-
     public function testFromKebabCase()
     {
         $this->performTest(
