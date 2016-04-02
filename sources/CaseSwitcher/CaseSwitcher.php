@@ -141,11 +141,7 @@ abstract class CaseSwitcher extends BaseProcessor
      */
     protected function processUndefinedCase($string)
     {
-        $string = $this->processSnakeCase($string);
-        $string = $this->processCamelCase($string);
-        $string = $this->processKebabCase($string);
-        $string = $this->processSentenceCase($string);
-        return $string;
+        $this->throwProcessionException();
     }
 
     /**
