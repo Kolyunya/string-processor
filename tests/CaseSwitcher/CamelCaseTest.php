@@ -2,11 +2,11 @@
 
 namespace Kolyunya\StringProcessor\CaseSwitcher;
 
-use Kolyunya\StringProcessor\CaseSwitcher\SnakeFormatter;
+use Kolyunya\StringProcessor\CaseSwitcher\CamelCase;
 use Kolyunya\StringProcessor\ProcessorInterface;
 use PHPUnit_Framework_TestCase;
 
-class SnakeFormatterTest extends PHPUnit_Framework_TestCase
+class CamelCaseTest extends PHPUnit_Framework_TestCase
 {
     /**
      * Kebab formatter processor.
@@ -18,7 +18,7 @@ class SnakeFormatterTest extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'some-text-in-kebab-case',
-            'some_text_in_kebab_case'
+            'SomeTextInKebabCase'
         );
     }
 
@@ -26,7 +26,7 @@ class SnakeFormatterTest extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'SomeTextInCamelCase',
-            'some_text_in_camel_case'
+            'SomeTextInCamelCase'
         );
     }
 
@@ -34,7 +34,7 @@ class SnakeFormatterTest extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'Foo',
-            'foo'
+            'Foo'
         );
     }
 
@@ -42,7 +42,7 @@ class SnakeFormatterTest extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'F',
-            'f'
+            'F'
         );
     }
 
@@ -50,7 +50,7 @@ class SnakeFormatterTest extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'some_text_in_underscore_case',
-            'some_text_in_underscore_case'
+            'SomeTextInUnderscoreCase'
         );
     }
 
@@ -58,7 +58,7 @@ class SnakeFormatterTest extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'some separate words',
-            'some_separate_words'
+            'SomeSeparateWords'
         );
     }
 
@@ -66,7 +66,7 @@ class SnakeFormatterTest extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'Some Separate Words',
-            'some_separate_words'
+            'SomeSeparateWords'
         );
     }
 
@@ -74,7 +74,7 @@ class SnakeFormatterTest extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'some-Really_weird Case',
-            'some_really_weird_case'
+            'SomeReallyWeirdCase'
         );
     }
 
@@ -82,7 +82,7 @@ class SnakeFormatterTest extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'some__string__with__multiple__underscores',
-            'some_string_with_multiple_underscores'
+            'SomeStringWithMultipleUnderscores'
         );
     }
 
@@ -90,7 +90,7 @@ class SnakeFormatterTest extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'string_with_a_trailing_underscore_',
-            'string_with_a_trailing_underscore'
+            'StringWithATrailingUnderscore'
         );
     }
 
@@ -98,7 +98,7 @@ class SnakeFormatterTest extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             '_string_with_a_leading_underscore',
-            'string_with_a_leading_underscore'
+            'StringWithALeadingUnderscore'
         );
     }
 
@@ -106,7 +106,7 @@ class SnakeFormatterTest extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             'string_with_a_trailing_underscores_____',
-            'string_with_a_trailing_underscores'
+            'StringWithATrailingUnderscores'
         );
     }
 
@@ -114,7 +114,7 @@ class SnakeFormatterTest extends PHPUnit_Framework_TestCase
     {
         $this->performTest(
             '_____string_with_a_leading_underscores',
-            'string_with_a_leading_underscores'
+            'StringWithALeadingUnderscores'
         );
     }
 
@@ -123,7 +123,7 @@ class SnakeFormatterTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->processor = new SnakeFormatter();
+        $this->processor = new CamelCase();
     }
 
     /**

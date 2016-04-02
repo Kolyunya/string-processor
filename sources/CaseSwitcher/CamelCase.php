@@ -9,7 +9,7 @@ use Kolyunya\StringProcessor\ProcessorInterface;
  * Converts a string to a "CamelCase".
  * @author Kolyunya
  */
-class CamelFormatter extends CaseSwitcher implements ProcessorInterface
+class CamelCase extends CaseSwitcher implements ProcessorInterface
 {
     /**
      * @inheritdoc

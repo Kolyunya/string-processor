@@ -2,9 +2,9 @@
 
 require 'vendor/autoload.php';
 
-use Kolyunya\StringProcessor\CaseSwitcher\KebabFormatter;
+use Kolyunya\StringProcessor\CaseSwitcher\KebabCase;
 
-$processor = new KebabFormatter();
+$processor = new KebabCase();
 
 $camelCaseOriginal = 'SomeTextInCamelCase';
 $camelCaseProcessed = $processor->process($camelCaseOriginal);

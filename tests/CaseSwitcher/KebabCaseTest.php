@@ -2,11 +2,11 @@
 
 namespace Kolyunya\StringProcessor\CaseSwitcher;
 
-use Kolyunya\StringProcessor\CaseSwitcher\KebabFormatter;
+use Kolyunya\StringProcessor\CaseSwitcher\KebabCase;
 use Kolyunya\StringProcessor\ProcessorInterface;
 use PHPUnit_Framework_TestCase;
 
-class KebabFormatterTest extends PHPUnit_Framework_TestCase
+class KebabCaseTest extends PHPUnit_Framework_TestCase
 {
     /**
      * Kebab formatter processor.
@@ -123,7 +123,7 @@ class KebabFormatterTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->processor = new KebabFormatter();
+        $this->processor = new KebabCase();
     }
 
     /**
