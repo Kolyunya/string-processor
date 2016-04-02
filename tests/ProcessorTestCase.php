@@ -14,6 +14,33 @@ class ProcessorTestCase extends PHPUnit_Framework_TestCase
     protected $processor;
 
     /**
+     * Tests a string processoor.
+     * @param string $sourceString Source string to process.
+     * @param string $processedStringExpected Expected processed stirng.
+     * @dataProvider processorTestsProvider
+     */
+    public function testProcessor($sourceString, $processedStringExpected)
+    {
+        if ($sourceString && $processedStringExpected) {
+            $this->performTest($sourceString, $processedStringExpected);
+        }
+    }
+
+    /**
+     * Data provider for string processor tests
+     * @return array
+     */
+    public function processorTestsProvider()
+    {
+        return array(
+            array(
+                null,
+                null,
+            )
+        );
+    }
+
+    /**
      * @inheritdoc
      */
     protected function tearDown()

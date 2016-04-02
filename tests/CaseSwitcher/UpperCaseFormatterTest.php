@@ -7,27 +7,24 @@ use Kolyunya\StringProcessor\ProcessorTestCase;
 
 class UpperCaseFormatterTest extends ProcessorTestCase
 {
-    public function testFromKebabCase()
+    /**
+     * @inheritdoc
+     */
+    public function processorTestsProvider()
     {
-        $this->performTest(
-            'some-text-in-kebab-case',
-            'SOME-TEXT-IN-KEBAB-CASE'
-        );
-    }
-
-    public function testFromCamelCase()
-    {
-        $this->performTest(
-            'SomeTextInCamelCase',
-            'SOMETEXTINCAMELCASE'
-        );
-    }
-
-    public function testFromSnakeCase()
-    {
-        $this->performTest(
-            'some_text_in_snake_case',
-            'SOME_TEXT_IN_SNAKE_CASE'
+        return array(
+            array(
+                'some-text-in-kebab-case',
+                'SOME-TEXT-IN-KEBAB-CASE'
+            ),
+            array(
+                'SomeTextInCamelCase',
+                'SOMETEXTINCAMELCASE'
+            ),
+            array(
+                'some_text_in_snake_case',
+                'SOME_TEXT_IN_SNAKE_CASE'
+            ),
         );
     }
 
