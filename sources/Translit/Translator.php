@@ -66,7 +66,7 @@ class Translator extends BaseProcessor implements TranslatorInterface
     /**
      * @inheritdoc
      */
-    public function process($string)
+    protected function selfProcession($string)
     {
         $string = $this->substituteCharacters($string);
         return $string;

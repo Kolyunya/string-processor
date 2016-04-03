@@ -14,4 +14,11 @@ interface ProcessorInterface
      * @return string A processed version of the original string.
      */
     public function process($string);
+
+    /**
+     * Decorates supplied processor with the current processor.
+     * @param ProcessorInterface $processor Processor to decorate.
+     * @return ProcessorInterface Current processor.
+     */
+    public function decorate(ProcessorInterface $processor);
 }

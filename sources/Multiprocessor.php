@@ -39,7 +39,7 @@ class Multiprocessor extends BaseProcessor implements ProcessorInterface
     /**
      * @inheritdoc
      */
-    public function process($string)
+    protected function selfProcession($string)
     {
         foreach ($this->processors as $processor) {
             $string = $processor->process($string);

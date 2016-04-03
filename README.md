@@ -15,7 +15,7 @@ This library is [composer-enabled](https://packagist.org/packages/kolyunya/strin
 ## Single processor usage
 
 ### Basic usage
-Each processor implements the [ProcessorInterface](https://github.com/Kolyunya/string-processor/blob/master/sources/ProcessorInterface.php) which contains just one method:
+Each processor implements the [ProcessorInterface](https://github.com/Kolyunya/string-processor/blob/master/sources/ProcessorInterface.php) which contains the `process` method:
 ~~~php
 /**
  * Processes a string and returns a processed version of the original string.
@@ -40,7 +40,7 @@ You can also use a processor without even instantiating it. Each processor has a
  * @param object|array $parameters Parameters passed to the processor's constructor.
  * @return string A processed version of the original string.
  */
-public static function run($string, $parameters = array())
+public static function run($string, $parameters = array());
 ~~~
 You can pass parameters to the processor's constructor in the `$parameters` array. You can alson pass a single parameter without wrapping it into an array.
 ~~~php
@@ -53,7 +53,7 @@ echo Translator::run(
 
 ## Processors combination
 
-### Using `Multiprocessor`
+### `Multiprocessor` usage
 There is a special processor ([`Multiprocessor`](https://github.com/Kolyunya/string-processor/blob/master/sources/Multiprocessor.php)) which allows you to combine multiple processors in one. Suppose you want to convert a string to an `UPPER-KEBAB` case. You can combine two processors using `Multiprocessor` to solve this problem.
 ~~~php
 $processor = new Multiprocessor([
@@ -72,6 +72,28 @@ $processor = new Multiprocessor([
     new KebabCaseFormatter(),
     new RuEnTranslator(),
 ]);
+echo $processor->process('Лорем ипсум долор сит амет'); // Output: "lorem-ipsum-dolor-sit-amet"
+echo $processor->process('Привет, Мир!'); // Output: "privet-mir"
+~~~
+
+### Processors decoration
+Each processor is a [decorator](https://en.wikipedia.org/wiki/Decorator_pattern). The [ProcessorInterface](https://github.com/Kolyunya/string-processor/blob/master/sources/ProcessorInterface.php) contains the `decorate` method:
+~~~php
+/**
+ * Decorates supplied processor with the current processor.
+ * @param ProcessorInterface $processor Processor to decorate.
+ * @return ProcessorInterface Current processor.
+ */
+public function decorate(ProcessorInterface $processor);
+~~~
+That means that the above example can be implemented using processors decoration. The `Multiprocessor` usage is somewhat more readable though.
+~~~php
+$processor =
+(new RuEnTranslator())->decorate(
+    (new KebabCaseFormatter())->decorate(
+        (new PunctuationStripper())
+    )
+);
 echo $processor->process('Лорем ипсум долор сит амет'); // Output: "lorem-ipsum-dolor-sit-amet"
 echo $processor->process('Привет, Мир!'); // Output: "privet-mir"
 ~~~

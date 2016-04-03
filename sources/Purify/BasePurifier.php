@@ -13,7 +13,7 @@ abstract class BasePurifier extends BaseProcessor
     /**
      * @inheritdoc
      */
-    final public function process($string)
+    protected function selfProcession($string)
     {
         $pattern = $this->getPattern();
         $string = preg_replace($pattern, '', $string);

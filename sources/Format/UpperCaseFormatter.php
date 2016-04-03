@@ -13,7 +13,7 @@ class UpperCaseFormatter extends BaseProcessor
     /**
      * @inheritdoc
      */
-    public function process($string)
+    protected function selfProcession($string)
     {
         $string = mb_convert_case($string, MB_CASE_UPPER);
         return $string;

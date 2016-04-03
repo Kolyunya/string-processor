@@ -60,7 +60,7 @@ abstract class CaseSwitcher extends BaseProcessor implements CaseSwitcherInterfa
     /**
      * @inheritdoc
      */
-    public function process($string)
+    protected function selfProcession($string)
     {
         // Check whether the destination string case is already reached.
         if ($this->destinationCaseIsReached()) {
