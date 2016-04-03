@@ -67,6 +67,9 @@ abstract class CaseSwitcher extends BaseProcessor implements CaseSwitcherInterfa
             return $string;
         }
 
+        // Perform preprocesstion.
+        $string = $this->preprocess($string);
+
         // Perform actual procession depending on the source case.
         switch ($this->sourceCase) {
             case self::SNAKE_CASE:
@@ -85,6 +88,29 @@ abstract class CaseSwitcher extends BaseProcessor implements CaseSwitcherInterfa
                 $string = $this->processUndefinedCase($string);
         }
 
+        // Perform postprocesstion.
+        $string = $this->postprocess($string);
+
+        return $string;
+    }
+
+    /**
+     * Performs preprocession on a source string.
+     * Override this function in actual formatters.
+     * @param string $string Source sring to perform preprocession on.
+     */
+    protected function preprocess($string)
+    {
+        return $string;
+    }
+
+    /**
+     * Performs postprocession on a processed string.
+     * Override this function in actual formatters.
+     * @param string $string Processed sring to perform postprocession on.
+     */
+    protected function postprocess($string)
+    {
         return $string;
     }
 
