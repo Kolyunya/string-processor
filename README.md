@@ -55,4 +55,5 @@ Currently the following processors are implemented
     * [SnakeCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/SnakeCaseFormatter.php) - formats a string to the `snake_case`.
     * [UpperCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/UpperCaseFormatter.php) - formats a string to the `UPPER CASE`.
     * [LowerCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/LowerCaseFormatter.php) - formats a string to the `lower case`.
+* [Translator](https://github.com/Kolyunya/string-processor/blob/master/sources/Translit/Translator.php) - transliterates strings from one language to another.
 * [Multiprocessor](https://github.com/Kolyunya/string-processor/blob/master/sources/Multiprocessor.php) - combines multiple processors.
