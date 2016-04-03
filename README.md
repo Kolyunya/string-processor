@@ -61,7 +61,7 @@ echo $processor->process('Лорем ипсум долор сит амет'); //
 ~~~
 
 ## Available processors
-Currently the following processors are implemented
+Currently the following processors are implemented:
 * [Case switchers](https://github.com/Kolyunya/string-processor/blob/master/sources/Format/CaseSwitcher.php) - format strings to arbitrary formats.
     * [CamelCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/Format/CamelCaseFormatter.php) - formats a string to the `CamelCase`.
     * [KebabCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/Format/KebabCaseFormatter.php) - formats a string to the `kebab-case`.
