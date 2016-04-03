@@ -72,7 +72,7 @@ Currently the following processors are implemented:
     * [LowerCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/Format/LowerCaseFormatter.php) - formats a string to the `lower case`.
 * [Translators](https://github.com/Kolyunya/string-processor/blob/master/sources/Translit/Translator.php) - transliterate strings from one language to another.
     * [RuEnTranslator](https://github.com/Kolyunya/string-processor/blob/master/sources/Translit/RuEnTranslator.php) - transliterates strings from Russian to English and the other way around.
-* [Purifiers](https://github.com/Kolyunya/string-processor/tree/master/sources/Purify) - purify strings.
+* [Purifiers](https://github.com/Kolyunya/string-processor/blob/master/sources/Purify/BasePurifier.php) - purify strings.
     * [PunctuationStripper](https://github.com/Kolyunya/string-processor/blob/master/sources/Purify/PunctuationStripper.php) - Strips punctuation characters.
     * [AlphabeticalPurifier](https://github.com/Kolyunya/string-processor/blob/master/sources/Purify/AlphabeticalPurifier.php) - Strips non-alphabetical characters.
 * [Multiprocessor](https://github.com/Kolyunya/string-processor/blob/master/sources/Multiprocessor.php) - combines multiple processors.
