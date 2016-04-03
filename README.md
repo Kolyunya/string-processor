@@ -32,9 +32,23 @@ echo $processor->process($string);
 ~~~
 
 ### Shorthand usage
-You can also use a processor without even instantiating it. Each processor has a static `run($string)` method. Note that the processor invoked in such way will be default-instantiated which may be not suitable for some processors.
+You can also use a processor without even instantiating it. Each processor has a static `run` method.
+~~~php
+/**
+ * Processes a string and returns a processed version of the original string.
+ * @param string $string A string to process.
+ * @param object|array $parameters Parameters passed to the processor's constructor.
+ * @return string A processed version of the original string.
+ */
+public static function run($string, $parameters = array())
+~~~
+You can pass parameters to the processor's constructor in the `$parameters` array. You can alson pass a single parameter without wrapping it into an array.
 ~~~php
 echo KebabCaseFormatter::run('snake_case'); // Output: "snake-case"
+echo Translator::run(
+    'Лорем ипсум долор сит амет',
+    new RuEnDictionary()
+); // Output: "Lorem ipsum dolor sit amet"
 ~~~
 
 ## Processors combination
