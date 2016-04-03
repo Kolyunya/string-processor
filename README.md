@@ -25,9 +25,8 @@ public function process($string);
 
 Construct a processor and just run `process($string)` on it:
 ~~~php
-$processor = new SomeArbitraryProcessor();
-// Configure processor if needed
-$processedString = $processor->process($string);
+$processor = new Processor();
+echo $processor->process($string);
 ~~~
 
 ## Quick usage
@@ -49,11 +48,11 @@ Note the the processors order matters. If you pass a kebab formatter as a second
 
 ## Available processors
 Currently the following processors are implemented
-* [Case switchers](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/CaseSwitcher.php)
-    * [CamelCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/CamelCaseFormatter.php) - formats a string to the `CamelCase`.
-    * [KebabCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/KebabCaseFormatter.php) - formats a string to the `kebab-case`.
-    * [SnakeCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/SnakeCaseFormatter.php) - formats a string to the `snake_case`.
-    * [UpperCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/UpperCaseFormatter.php) - formats a string to the `UPPER CASE`.
-    * [LowerCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/CaseSwitcher/LowerCaseFormatter.php) - formats a string to the `lower case`.
+* [Case switchers](https://github.com/Kolyunya/string-processor/blob/master/sources/Format/CaseSwitcher.php)
+    * [CamelCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/Format/CamelCaseFormatter.php) - formats a string to the `CamelCase`.
+    * [KebabCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/Format/KebabCaseFormatter.php) - formats a string to the `kebab-case`.
+    * [SnakeCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/Format/SnakeCaseFormatter.php) - formats a string to the `snake_case`.
+    * [UpperCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/Format/UpperCaseFormatter.php) - formats a string to the `UPPER CASE`.
+    * [LowerCaseFormatter](https://github.com/Kolyunya/string-processor/blob/master/sources/Format/LowerCaseFormatter.php) - formats a string to the `lower case`.
 * [Translator](https://github.com/Kolyunya/string-processor/blob/master/sources/Translit/Translator.php) - transliterates strings from one language to another.
 * [Multiprocessor](https://github.com/Kolyunya/string-processor/blob/master/sources/Multiprocessor.php) - combines multiple processors.

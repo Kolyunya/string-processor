@@ -2,7 +2,7 @@
 
 require 'vendor/autoload.php';
 
-use Kolyunya\StringProcessor\CaseSwitcher\KebabCaseFormatter;
+use Kolyunya\StringProcessor\Format\KebabCaseFormatter;
 
 $processor = new KebabCaseFormatter();
 

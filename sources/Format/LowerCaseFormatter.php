@@ -1,6 +1,6 @@
 <?php
 
-namespace Kolyunya\StringProcessor\CaseSwitcher;
+namespace Kolyunya\StringProcessor\Format;
 
 use Kolyunya\StringProcessor\BaseProcessor;
 

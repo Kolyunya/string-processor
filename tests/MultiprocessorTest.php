@@ -1,10 +1,10 @@
 <?php
 
-namespace Kolyunya\StringProcessor\CaseSwitcher;
+namespace Kolyunya\StringProcessor;
 
-use Kolyunya\StringProcessor\CaseSwitcher\KebabCaseFormatter;
-use Kolyunya\StringProcessor\CaseSwitcher\SnakeCaseFormatter;
-use Kolyunya\StringProcessor\CaseSwitcher\UpperCaseFormatter;
+use Kolyunya\StringProcessor\Format\KebabCaseFormatter;
+use Kolyunya\StringProcessor\Format\SnakeCaseFormatter;
+use Kolyunya\StringProcessor\Format\UpperCaseFormatter;
 use Kolyunya\StringProcessor\Multiprocessor;
 use Kolyunya\StringProcessor\ProcessorTestCase;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Kolyunya\StringProcessor\CaseSwitcher;
+namespace Kolyunya\StringProcessor\Format;
 
 use Exception;
 use Kolyunya\StringProcessor\BaseProcessor;
-use Kolyunya\StringProcessor\CaseSwitcher\CaseSwitcherInterface;
+use Kolyunya\StringProcessor\Format\CaseSwitcherInterface;
 
 /**
  * A base class for all case switchers.

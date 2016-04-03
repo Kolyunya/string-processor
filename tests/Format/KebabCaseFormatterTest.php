@@ -1,17 +1,17 @@
 <?php
 
-namespace Kolyunya\StringProcessor\CaseSwitcher;
+namespace Kolyunya\StringProcessor\Format;
 
-use Kolyunya\StringProcessor\CaseSwitcher\CamelCaseFormatter;
+use Kolyunya\StringProcessor\Format\KebabCaseFormatter;
 use Kolyunya\StringProcessor\ProcessorTestCase;
 
-class CamelCaseFormatterTest extends ProcessorTestCase
+class KebabCaseFormatterTest extends ProcessorTestCase
 {
     public function testFromKebabCase()
     {
         $this->performTest(
             'some-text-in-kebab-case',
-            'SomeTextInKebabCase'
+            'some-text-in-kebab-case'
         );
     }
 
@@ -19,7 +19,7 @@ class CamelCaseFormatterTest extends ProcessorTestCase
     {
         $this->performTest(
             'SomeTextInCamelCase',
-            'SomeTextInCamelCase'
+            'some-text-in-camel-case'
         );
     }
 
@@ -27,7 +27,7 @@ class CamelCaseFormatterTest extends ProcessorTestCase
     {
         $this->performTest(
             'Foo',
-            'Foo'
+            'foo'
         );
     }
 
@@ -35,7 +35,7 @@ class CamelCaseFormatterTest extends ProcessorTestCase
     {
         $this->performTest(
             'F',
-            'F'
+            'f'
         );
     }
 
@@ -43,7 +43,7 @@ class CamelCaseFormatterTest extends ProcessorTestCase
     {
         $this->performTest(
             'some_text_in_underscore_case',
-            'SomeTextInUnderscoreCase'
+            'some-text-in-underscore-case'
         );
     }
 
@@ -51,7 +51,7 @@ class CamelCaseFormatterTest extends ProcessorTestCase
     {
         $this->performTest(
             'some separate words',
-            'SomeSeparateWords'
+            'some-separate-words'
         );
     }
 
@@ -59,7 +59,7 @@ class CamelCaseFormatterTest extends ProcessorTestCase
     {
         $this->performTest(
             'Some Separate Words',
-            'SomeSeparateWords'
+            'some-separate-words'
         );
     }
 
@@ -67,7 +67,7 @@ class CamelCaseFormatterTest extends ProcessorTestCase
     {
         $this->performTest(
             'some-Really_weird Case',
-            'SomeReallyWeirdCase'
+            'some-really-weird-case'
         );
     }
 
@@ -75,7 +75,7 @@ class CamelCaseFormatterTest extends ProcessorTestCase
     {
         $this->performTest(
             'some__string__with__multiple__underscores',
-            'SomeStringWithMultipleUnderscores'
+            'some-string-with-multiple-underscores'
         );
     }
 
@@ -83,7 +83,7 @@ class CamelCaseFormatterTest extends ProcessorTestCase
     {
         $this->performTest(
             'string_with_a_trailing_underscore_',
-            'StringWithATrailingUnderscore'
+            'string-with-a-trailing-underscore'
         );
     }
 
@@ -91,7 +91,7 @@ class CamelCaseFormatterTest extends ProcessorTestCase
     {
         $this->performTest(
             '_string_with_a_leading_underscore',
-            'StringWithALeadingUnderscore'
+            'string-with-a-leading-underscore'
         );
     }
 
@@ -99,7 +99,7 @@ class CamelCaseFormatterTest extends ProcessorTestCase
     {
         $this->performTest(
             'string_with_a_trailing_underscores_____',
-            'StringWithATrailingUnderscores'
+            'string-with-a-trailing-underscores'
         );
     }
 
@@ -107,7 +107,7 @@ class CamelCaseFormatterTest extends ProcessorTestCase
     {
         $this->performTest(
             '_____string_with_a_leading_underscores',
-            'StringWithALeadingUnderscores'
+            'string-with-a-leading-underscores'
         );
     }
 
@@ -116,7 +116,7 @@ class CamelCaseFormatterTest extends ProcessorTestCase
      */
     protected function setUp()
     {
+        $this->processor = new KebabCaseFormatter();
         parent::setUp();
-        $this->processor = new CamelCaseFormatter();
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Kolyunya\StringProcessor\CaseSwitcher;
+namespace Kolyunya\StringProcessor\Format;
 
-use Kolyunya\StringProcessor\CaseSwitcher\CaseSwitcher;
+use Kolyunya\StringProcessor\Format\CaseSwitcher;
 use Kolyunya\StringProcessor\ProcessorInterface;
 
 /**

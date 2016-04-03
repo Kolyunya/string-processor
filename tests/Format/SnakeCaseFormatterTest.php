@@ -1,8 +1,8 @@
 <?php
 
-namespace Kolyunya\StringProcessor\CaseSwitcher;
+namespace Kolyunya\StringProcessor\Format;
 
-use Kolyunya\StringProcessor\CaseSwitcher\SnakeCaseFormatter;
+use Kolyunya\StringProcessor\Format\SnakeCaseFormatter;
 use Kolyunya\StringProcessor\ProcessorTestCase;
 
 class SnakeCaseFormatterTest extends ProcessorTestCase

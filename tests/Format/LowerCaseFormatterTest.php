@@ -1,8 +1,8 @@
 <?php
 
-namespace Kolyunya\StringProcessor\CaseSwitcher;
+namespace Kolyunya\StringProcessor\Format;
 
-use Kolyunya\StringProcessor\CaseSwitcher\LowerCaseFormatter;
+use Kolyunya\StringProcessor\Format\LowerCaseFormatter;
 use Kolyunya\StringProcessor\ProcessorTestCase;
 
 class LowerCaseFormatterTest extends ProcessorTestCase

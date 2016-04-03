@@ -1,8 +1,8 @@
 <?php
 
-namespace Kolyunya\StringProcessor\CaseSwitcher;
+namespace Kolyunya\StringProcessor\Format;
 
-use Kolyunya\StringProcessor\CaseSwitcher\UpperCaseFormatter;
+use Kolyunya\StringProcessor\Format\UpperCaseFormatter;
 use Kolyunya\StringProcessor\ProcessorTestCase;
 
 class UpperCaseFormatterTest extends ProcessorTestCase
