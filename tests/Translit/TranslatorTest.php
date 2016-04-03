@@ -30,6 +30,15 @@ class TranslatorTest extends ProcessorTestCase
         );
     }
 
+    public function testReversedTranslation001()
+    {
+        $this->processor->setDirection(Translator::DIRECTION_REVERSED);
+        $this->performTest(
+            'Privet, mir!',
+            'Привет, мир!'
+        );
+    }
+
     /**
      * @inheritdoc
      */
