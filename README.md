@@ -51,13 +51,15 @@ echo $processor->process('CamelCase'); // Output: "CAMEL-CASE"
 ~~~
 The `UpperCaseFormatter` will be applied after the `KebabCaseFormatter`. Note that either the processors order does not matter in the first example, it actually matters in the second one.
 
-Another common problem example is to generate URL slugs. A string should be converted to the `kebab-case` and transliterated. Combine the `KebabCaseFormatter` and the `Translator` using `Multiprocessor`.
+Another common problem example is to generate URL slugs. A string should be purified, converted to the `kebab-case` and transliterated. Combine the `PunctuationStripper`, the `KebabCaseFormatter` and the `Translator` using `Multiprocessor`.
 ~~~php
 $processor = new Multiprocessor([
+    new PunctuationStripper(),
     new KebabCaseFormatter(),
     new RuEnTranslator(),
 ]);
 echo $processor->process('Лорем ипсум долор сит амет'); // Output: "lorem-ipsum-dolor-sit-amet"
+echo $processor->process('Привет, Мир!'); // Output: "privet-mir"
 ~~~
 
 ## Available processors
