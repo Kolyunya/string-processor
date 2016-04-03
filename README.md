@@ -49,7 +49,7 @@ $processor = new Multiprocessor([
 echo $processor->process('snake_case'); // Output: "SNAKE-CASE"
 echo $processor->process('CamelCase'); // Output: "CAMEL-CASE"
 ~~~
-The `UpperCaseFormatter` will be applied after `KebabCaseFormatter`. Note that either the processors order does not matter in the first example, it actually matters in the second one.
+The `UpperCaseFormatter` will be applied after the `KebabCaseFormatter`. Note that either the processors order does not matter in the first example, it actually matters in the second one.
 
 ## Available processors
 Currently the following processors are implemented
