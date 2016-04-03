@@ -15,7 +15,7 @@ This library is [composer-enabled](https://packagist.org/packages/kolyunya/strin
 ## Single processor usage
 
 ### Basic usage
-Each processor implement [ProcessorInterface](https://github.com/Kolyunya/string-processor/blob/master/sources/ProcessorInterface.php) which contains just one method:
+Each processor implements the [ProcessorInterface](https://github.com/Kolyunya/string-processor/blob/master/sources/ProcessorInterface.php) which contains just one method:
 ~~~php
 /**
  * Processes a string and returns a processed version of the original string.
