@@ -1,11 +1,11 @@
 # PHP string procession library
 
 ## Description
-This library is a collection of string processors.
+This library provides a collection of string processors.
 
 ## Installation
 
-This package is [composer-enabled](https://packagist.org/packages/kolyunya/string-processor). Just require it in your composer.json.
+This library is [composer-enabled](https://packagist.org/packages/kolyunya/string-processor). The recommended way of using it in your project is to require it in your `composer.json`.
 ~~~
 "require": {
     "kolyunya/string-processor": "*"
