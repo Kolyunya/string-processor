@@ -7,6 +7,7 @@ use Kolyunya\StringProcessor\Format\SnakeCaseFormatter;
 use Kolyunya\StringProcessor\Format\UpperCaseFormatter;
 use Kolyunya\StringProcessor\Multiprocessor;
 use Kolyunya\StringProcessor\ProcessorTestCase;
+use Kolyunya\StringProcessor\Translit\RuEnTranslator;
 
 class MultiprocessorTest extends ProcessorTestCase
 {
@@ -36,6 +37,18 @@ class MultiprocessorTest extends ProcessorTestCase
         $this->performTest(
             'some-text-in-kebab-case',
             'SOME_TEXT_IN_KEBAB_CASE'
+        );
+    }
+
+    public function testKebabTranslitProcessor()
+    {
+        $this->processor = new Multiprocessor([
+            new RuEnTranslator(),
+            new KebabCaseFormatter(),
+        ]);
+        $this->performTest(
+            'Лорем ипсум долор сит амет',
+            'lorem-ipsum-dolor-sit-amet'
         );
     }
 }
