@@ -51,6 +51,15 @@ echo $processor->process('CamelCase'); // Output: "CAMEL-CASE"
 ~~~
 The `UpperCaseFormatter` will be applied after the `KebabCaseFormatter`. Note that either the processors order does not matter in the first example, it actually matters in the second one.
 
+Another common problem example is to generate URL slugs. A string should be converted to the `kebab-case` and transliterated. Combine the `KebabCaseFormatter` and the `Translator` using `Multiprocessor`.
+~~~php
+$processor = new Multiprocessor([
+    new KebabCaseFormatter(),
+    new RuEnTranslator(),
+]);
+echo $processor->process('Лорем ипсум долор сит амет'); // Output: "lorem-ipsum-dolor-sit-amet"
+~~~
+
 ## Available processors
 Currently the following processors are implemented
 * [Case switchers](https://github.com/Kolyunya/string-processor/blob/master/sources/Format/CaseSwitcher.php)
