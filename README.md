@@ -12,7 +12,7 @@ This library is [composer-enabled](https://packagist.org/packages/kolyunya/strin
 }
 ~~~
 
-## Usage
+## Single processor usage
 
 ### Basic usage
 Each processor implement [ProcessorInterface](https://github.com/Kolyunya/string-processor/blob/master/sources/ProcessorInterface.php) which contains just one method:
@@ -37,16 +37,19 @@ You can also use a processor without even instantiating it. Each processor has a
 echo KebabCaseFormatter::run('snake_case'); // Output: "snake-case"
 ~~~
 
-### Combining multiple processors
-Suppose you want to convert a stirng to an upper-kebab case. To achieve this you can combine two processors like this:
+## Processors combination
+
+### Using `Multiprocessor`
+There is a special processor ([`Multiprocessor`](https://github.com/Kolyunya/string-processor/blob/master/sources/Multiprocessor.php) which allows you to combine multiple processors in one. Suppose you want to convert a stirng to an `UPPER-KEBAB` case. You can combine two processors using `Multiprocessor` to solve this problem.
 ~~~php
 $processor = new Multiprocessor([
     new KebabCaseFormatter(),
     new UpperCaseFormatter(),
 ]);
 echo $processor->process('snake_case'); // Output: "SNAKE-CASE"
+echo $processor->process('CamelCase'); // Output: "CAMEL-CASE"
 ~~~
-Note the the processors order matters. If you pass a kebab formatter as a second processor it will convert the string back to the lower case (normal kebab case).
+The `UpperCaseFormatter` will be applied after `KebabCaseFormatter`. Note that either the processors order does not matter in the first example, it actually matters in the second one.
 
 ## Available processors
 Currently the following processors are implemented
