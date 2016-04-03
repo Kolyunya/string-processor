@@ -7,6 +7,7 @@ use Kolyunya\StringProcessor\Format\SnakeCaseFormatter;
 use Kolyunya\StringProcessor\Format\UpperCaseFormatter;
 use Kolyunya\StringProcessor\Multiprocessor;
 use Kolyunya\StringProcessor\ProcessorTestCase;
+use Kolyunya\StringProcessor\Purify\AlphabeticalPurifier;
 use Kolyunya\StringProcessor\Purify\PunctuationStripper;
 use Kolyunya\StringProcessor\Translit\RuEnTranslator;
 
@@ -70,6 +71,19 @@ class MultiprocessorTest extends ProcessorTestCase
     {
         $this->processor = new Multiprocessor([
             new PunctuationStripper(),
+            new RuEnTranslator(),
+            new KebabCaseFormatter(),
+        ]);
+        $this->performTest(
+            'Привет, Мир!',
+            'privet-mir'
+        );
+    }
+
+    public function testSlugGenerator003()
+    {
+        $this->processor = new Multiprocessor([
+            new AlphabeticalPurifier(),
             new RuEnTranslator(),
             new KebabCaseFormatter(),
         ]);
