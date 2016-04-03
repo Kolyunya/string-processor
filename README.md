@@ -13,6 +13,8 @@ This library is [composer-enabled](https://packagist.org/packages/kolyunya/strin
 ~~~
 
 ## Usage
+
+### Basic usage
 Each processor implement [ProcessorInterface](https://github.com/Kolyunya/string-processor/blob/master/sources/ProcessorInterface.php) which contains just one method:
 ~~~php
 /**
@@ -23,19 +25,19 @@ Each processor implement [ProcessorInterface](https://github.com/Kolyunya/string
 public function process($string);
 ~~~
 
-Construct a processor and just run `process($string)` on it:
+Construct a processor and run `process($string)` on it:
 ~~~php
 $processor = new Processor();
 echo $processor->process($string);
 ~~~
 
-## Quick usage
-You can use a processor without even instantiating it. The static `run($string)` method allows it. Note that the processor invoked in such way is default-initialized.
+### Shorthand usage
+You can also use a processor without even instantiating it. Each processor has a static `run($string)` method. Note that the processor invoked in such way will be default-instantiated which may be not suitable for some processors.
 ~~~php
 echo KebabCaseFormatter::run('snake_case'); // Output: "snake-case"
 ~~~
 
-## Combining multiple processors
+### Combining multiple processors
 Suppose you want to convert a stirng to an upper-kebab case. To achieve this you can combine two processors like this:
 ~~~php
 $processor = new Multiprocessor([
