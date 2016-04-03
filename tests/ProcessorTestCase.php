@@ -8,6 +8,18 @@ use PHPUnit_Framework_TestCase;
 class ProcessorTestCase extends PHPUnit_Framework_TestCase
 {
     /**
+     * Whether to run non-static tests or not.
+     * @var boolean
+     */
+    protected static $RUN_NON_STATIC_TESTS = true;
+
+    /**
+     * Whether to run static tests or not.
+     * @var boolean
+     */
+    protected static $RUN_STATIC_TESTS = true;
+
+    /**
      * String processor.
      * @var ProcessorInterface
      */
@@ -56,8 +68,12 @@ class ProcessorTestCase extends PHPUnit_Framework_TestCase
      */
     protected function performTest($sourceString, $processedStringExpected)
     {
-        $this->performNonStaticTest($sourceString, $processedStringExpected);
-        $this->performStaticTest($sourceString, $processedStringExpected);
+        if (static::$RUN_NON_STATIC_TESTS) {
+            $this->performNonStaticTest($sourceString, $processedStringExpected);
+        }
+        if (static::$RUN_STATIC_TESTS) {
+            $this->performStaticTest($sourceString, $processedStringExpected);
+        }
     }
 
     /**

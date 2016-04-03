@@ -10,6 +10,11 @@ use Kolyunya\StringProcessor\ProcessorTestCase;
 
 class MultiprocessorTest extends ProcessorTestCase
 {
+    /**
+     * @inheritdoc
+     */
+    protected static $RUN_STATIC_TESTS = false;
+
     public function testUpperKebabCase()
     {
         $this->processor = new Multiprocessor([
@@ -32,13 +37,5 @@ class MultiprocessorTest extends ProcessorTestCase
             'some-text-in-kebab-case',
             'SOME_TEXT_IN_KEBAB_CASE'
         );
-    }
-
-    /**
-     * @inheritdoc
-     */
-    protected function performTest($sourceString, $processedStringExpected)
-    {
-        $this->performNonStaticTest($sourceString, $processedStringExpected);
     }
 }
