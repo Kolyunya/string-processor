@@ -23,7 +23,7 @@ class SnakeCaseFormatter extends CaseSwitcher implements ProcessorInterface
     {
         // Add underscores before each capital letter
         // which is not the first letter of the string.
-        $pattern = '/(?<!^)[A-Z]/';
+        $pattern = '/(?<!^)\p{Lu}/u';
         $callback = function ($matches) {
             $match = $matches[0];
             $replace = "_$match";
@@ -84,7 +84,7 @@ class SnakeCaseFormatter extends CaseSwitcher implements ProcessorInterface
     private function removeDuplicateUnderscores($string)
     {
         // Keep removing duplicate underscores while they are present.
-        while (strpos($string, '__') !== false) {
+        while (mb_strpos($string, '__') !== false) {
             $string = str_replace('__', '_', $string);
         }
 
@@ -99,7 +99,7 @@ class SnakeCaseFormatter extends CaseSwitcher implements ProcessorInterface
     private function removeTailUnderscores($string)
     {
         // Keep removing tail underscores while they are present.
-        $pattern = '/(^_)|(_$)/';
+        $pattern = '/(^_)|(_$)/u';
         while (preg_match($pattern, $string) === 1) {
             $string = preg_replace($pattern, '', $string);
         }

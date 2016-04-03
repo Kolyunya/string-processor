@@ -55,8 +55,8 @@ Another common problem example is to generate URL slugs. A string should be puri
 ~~~php
 $processor = new Multiprocessor([
     new PunctuationStripper(),
-    new RuEnTranslator(),
     new KebabCaseFormatter(),
+    new RuEnTranslator(),
 ]);
 echo $processor->process('Лорем ипсум долор сит амет'); // Output: "lorem-ipsum-dolor-sit-amet"
 echo $processor->process('Привет, Мир!'); // Output: "privet-mir"

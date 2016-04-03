@@ -23,7 +23,7 @@ class CamelCaseFormatter extends CaseSwitcher implements ProcessorInterface
     {
         // Shift letters after underscores and
         // the first letter to the upper case.
-        $pattern = '/(?<=^|_)[a-z]/';
+        $pattern = '/(?<=^|_)\p{L}/u';
         $callback = function ($matches) {
             $match = $matches[0];
             $replace = mb_convert_case($match, MB_CASE_UPPER);
@@ -44,7 +44,7 @@ class CamelCaseFormatter extends CaseSwitcher implements ProcessorInterface
     {
         // Shift letters after hyphens and
         // the first letter to the upper case.
-        $pattern = '/(?<=^|-)[a-z]/';
+        $pattern = '/(?<=^|-)\p{L}/u';
         $callback = function ($matches) {
             $match = $matches[0];
             $replace = mb_convert_case($match, MB_CASE_UPPER);
@@ -65,7 +65,7 @@ class CamelCaseFormatter extends CaseSwitcher implements ProcessorInterface
     {
         // Shift letters after spaces and
         // the first letter to the upper case.
-        $pattern = '/(?<=^| )[a-z]/';
+        $pattern = '/(?<=^| )\p{L}/u';
         $callback = function ($matches) {
             $match = $matches[0];
             $replace = mb_convert_case($match, MB_CASE_UPPER);

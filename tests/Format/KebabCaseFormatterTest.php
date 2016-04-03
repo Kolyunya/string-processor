@@ -23,6 +23,14 @@ class KebabCaseFormatterTest extends ProcessorTestCase
         );
     }
 
+    public function testFromCamelCaseInUnicode()
+    {
+        $this->performTest(
+            'ПриветМирКакДела',
+            'привет-мир-как-дела'
+        );
+    }
+
     public function testFromShortCamelCase()
     {
         $this->performTest(
@@ -39,11 +47,20 @@ class KebabCaseFormatterTest extends ProcessorTestCase
         );
     }
 
-    public function testFromUnderscoreCase()
+    public function testFromSnakeCase()
     {
         $this->performTest(
             'some_text_in_underscore_case',
             'some-text-in-underscore-case'
+        );
+    }
+
+
+    public function testFromSnakeCaseInUnicode()
+    {
+        $this->performTest(
+            'привет_мир_как_дела',
+            'привет-мир-как-дела'
         );
     }
 
@@ -52,6 +69,14 @@ class KebabCaseFormatterTest extends ProcessorTestCase
         $this->performTest(
             'some separate words',
             'some-separate-words'
+        );
+    }
+
+    public function testFromSeparateWordsInUnicode()
+    {
+        $this->performTest(
+            'Привет мир как дела',
+            'привет-мир-как-дела'
         );
     }
 

@@ -15,7 +15,7 @@ class PunctuationStripper extends BaseProcessor
      */
     public function process($string)
     {
-        $string = preg_replace('/[[:punct:]]/', '', $string);
+        $string = preg_replace('/[[:punct:]]/u', '', $string);
         return $string;
     }
 }

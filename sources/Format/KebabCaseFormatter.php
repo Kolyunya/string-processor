@@ -34,7 +34,7 @@ class KebabCaseFormatter extends CaseSwitcher implements ProcessorInterface
     {
         // Add hyphens before each capital letter
         // which is not the first letter of the string.
-        $pattern = '/(?<!^)[A-Z]/';
+        $pattern = '/(?<!^)\p{Lu}/u';
         $callback = function ($matches) {
             $match = $matches[0];
             $replace = "-$match";
@@ -84,7 +84,7 @@ class KebabCaseFormatter extends CaseSwitcher implements ProcessorInterface
     private function removeDuplicateHyphens($string)
     {
         // Keep removing duplicate hyphens while they are present.
-        while (strpos($string, '--') !== false) {
+        while (mb_strpos($string, '--') !== false) {
             $string = str_replace('--', '-', $string);
         }
 
@@ -99,7 +99,7 @@ class KebabCaseFormatter extends CaseSwitcher implements ProcessorInterface
     private function removeTailHyphens($string)
     {
         // Keep removing tail hyphens while they are present.
-        $pattern = '/(^-)|(-$)/';
+        $pattern = '/(^-)|(-$)/u';
         while (preg_match($pattern, $string) === 1) {
             $string = preg_replace($pattern, '', $string);
         }
