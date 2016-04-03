@@ -74,4 +74,5 @@ Currently the following processors are implemented:
     * [RuEnTranslator](https://github.com/Kolyunya/string-processor/blob/master/sources/Translit/RuEnTranslator.php) - transliterates strings from Russian to English and the other way around.
 * [Purifiers](https://github.com/Kolyunya/string-processor/tree/master/sources/Purify) - purify strings.
     * [PunctuationStripper](https://github.com/Kolyunya/string-processor/blob/master/sources/Purify/PunctuationStripper.php) - Strips punctuation characters.
+    * [AlphabeticalPurifier](https://github.com/Kolyunya/string-processor/blob/master/sources/Purify/AlphabeticalPurifier.php) - Strips non-alphabetical characters.
 * [Multiprocessor](https://github.com/Kolyunya/string-processor/blob/master/sources/Multiprocessor.php) - combines multiple processors.
