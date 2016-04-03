@@ -42,7 +42,7 @@ You can also use a processor without even instantiating it. Each processor has a
  */
 public static function run($string, $parameters = array());
 ~~~
-You can pass parameters to the processor's constructor in the `$parameters` array. You can alson pass a single parameter without wrapping it into an array.
+You can pass parameters to the processor's constructor in the `$parameters` array. You can also pass a single parameter without wrapping it into an array.
 ~~~php
 echo KebabCaseFormatter::run('snake_case'); // Output: "snake-case"
 echo Translator::run(
