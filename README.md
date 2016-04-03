@@ -40,7 +40,7 @@ echo KebabCaseFormatter::run('snake_case'); // Output: "snake-case"
 ## Processors combination
 
 ### Using `Multiprocessor`
-There is a special processor ([`Multiprocessor`](https://github.com/Kolyunya/string-processor/blob/master/sources/Multiprocessor.php) which allows you to combine multiple processors in one. Suppose you want to convert a stirng to an `UPPER-KEBAB` case. You can combine two processors using `Multiprocessor` to solve this problem.
+There is a special processor ([`Multiprocessor`](https://github.com/Kolyunya/string-processor/blob/master/sources/Multiprocessor.php)) which allows you to combine multiple processors in one. Suppose you want to convert a stirng to an `UPPER-KEBAB` case. You can combine two processors using `Multiprocessor` to solve this problem.
 ~~~php
 $processor = new Multiprocessor([
     new KebabCaseFormatter(),
