@@ -35,12 +35,16 @@ class Translator extends BaseProcessor implements TranslatorInterface
     private $direction;
 
     /**
-     * @inheritdoc
+     * Constructs a translator using dictionary and direction
+     * @param DictionaryInterface $dictionary Translation dictionary.
+     * @param integer $direction Translation direction.
      */
-    public function __construct(DictionaryInterface $dictionary = null)
-    {
+    public function __construct(
+        DictionaryInterface $dictionary = null,
+        $direction = self::DIRECTION_FORWARD
+    ) {
         $this->setDictionary($dictionary);
-        $this->setDirection(self::DIRECTION_FORWARD);
+        $this->setDirection($direction);
     }
 
     /**
