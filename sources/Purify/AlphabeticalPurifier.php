@@ -15,7 +15,7 @@ class AlphabeticalPurifier extends BasePurifier
      */
     protected function getPattern()
     {
-        $pattern = '/\W/u';
+        $pattern = '/[^\s\p{L}]/u';
         return $pattern;
     }
 }

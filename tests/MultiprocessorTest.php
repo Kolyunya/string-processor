@@ -92,4 +92,17 @@ class MultiprocessorTest extends ProcessorTestCase
             'privet-mir'
         );
     }
+
+    public function testSlugGenerator004()
+    {
+        $this->processor = new Multiprocessor([
+            new AlphabeticalPurifier(),
+            new RuEnTranslator(),
+            new KebabCaseFormatter(),
+        ]);
+        $this->performTest(
+            'Привет, мир!',
+            'privet-mir'
+        );
+    }
 }
