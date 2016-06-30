@@ -68,9 +68,9 @@ The `UpperCaseFormatter` will be applied after the `KebabCaseFormatter`. Note th
 Another common problem example is to generate URL slugs. A string should be purified from punctuation characters, converted to the `kebab-case` and transliterated. Combine the `PunctuationStripper`, the `KebabCaseFormatter` and the `Translator` using `Multiprocessor`.
 ~~~php
 $processor = new Multiprocessor([
-    new PunctuationStripper(),
-    new KebabCaseFormatter(),
     new RuEnTranslator(),
+    new AlphabeticalPurifier(),
+    new KebabCaseFormatter(),
 ]);
 echo $processor->process('Лорем ипсум долор сит амет'); // Output: "lorem-ipsum-dolor-sit-amet"
 echo $processor->process('Привет, Мир!'); // Output: "privet-mir"
