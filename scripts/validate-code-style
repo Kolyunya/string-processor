@@ -1,9 +1,0 @@
-#!/bin/sh
-vendor/bin/phpcs \
-    --report=full \
-    --severity=1 \
-    --encoding=UTF-8 \
-    --standard=PSR2 \
-    sources \
-    examples \
-    tests \
