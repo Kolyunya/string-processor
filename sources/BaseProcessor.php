@@ -21,13 +21,16 @@ abstract class BaseProcessor implements ProcessorInterface
      * Processes a string and returns a processed version of the original string.
      * @param string $string A string to process.
      * @param object|array $parameters Parameters passed to the processor's constructor.
+     * @param string $encoding Default encoding.
      * @return string A processed version of the original string.
      */
-    public static function run($string, $parameters = array())
+    public static function run($string, $parameters = array(), $encoding = 'UTF-8')
     {
         if (!is_array($parameters)) {
             $parameters = array($parameters);
         }
+        mb_internal_encoding($encoding);
+        mb_regex_encoding($encoding);
         $processorClass = get_called_class();
         $processorReflection = new ReflectionClass($processorClass);
         $processor = $processorReflection->newInstanceArgs($parameters);

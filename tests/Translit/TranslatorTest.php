@@ -4,7 +4,7 @@ namespace Kolyunya\StringProcessor\CaseSwitcher;
 
 use Kolyunya\StringProcessor\Translit\Dictionary\RuEnDictionary;
 use Kolyunya\StringProcessor\Translit\Translator;
-use Kolyunya\StringProcessor\ProcessorTestCase;
+use Kolyunya\StringProcessor\Tests\ProcessorTestCase;
 
 class TranslatorTest extends ProcessorTestCase
 {

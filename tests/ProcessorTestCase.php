@@ -1,11 +1,11 @@
 <?php
 
-namespace Kolyunya\StringProcessor;
+namespace Kolyunya\StringProcessor\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Kolyunya\StringProcessor\ProcessorInterface;
-use PHPUnit_Framework_TestCase;
 
-class ProcessorTestCase extends PHPUnit_Framework_TestCase
+class ProcessorTestCase extends TestCase
 {
     /**
      * Whether to run non-static tests or not.

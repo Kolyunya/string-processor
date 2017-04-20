@@ -1,9 +1,9 @@
 <?php
 
-namespace Kolyunya\StringProcessor\Format;
+namespace Kolyunya\StringProcessor\Tests\Format;
 
 use Kolyunya\StringProcessor\Format\UpperCaseFormatter;
-use Kolyunya\StringProcessor\ProcessorTestCase;
+use Kolyunya\StringProcessor\Tests\ProcessorTestCase;
 
 class UpperCaseFormatterTest extends ProcessorTestCase
 {

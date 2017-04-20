@@ -3,7 +3,7 @@
 namespace Kolyunya\StringProcessor\Format;
 
 use Kolyunya\StringProcessor\Purify\AlphabeticalPurifier;
-use Kolyunya\StringProcessor\ProcessorTestCase;
+use Kolyunya\StringProcessor\Tests\ProcessorTestCase;
 
 class AlphabeticalPurifierTest extends ProcessorTestCase
 {

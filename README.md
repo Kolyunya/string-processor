@@ -1,10 +1,16 @@
 # PHP string procession library
 
+## Status
+[![Build Status](https://travis-ci.org/Kolyunya/string-processor.svg?branch=master)](https://travis-ci.org/Kolyunya/string-processor)
+[![Dependency Status](https://www.versioneye.com/user/projects/58f8b0a26ac1710042505b00/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58f8b0a26ac1710042505b00)
+[![Latest Stable Version](https://poser.pugx.org/kolyunya/string-processor/v/stable)](https://packagist.org/packages/kolyunya/string-processor)
+[![License](https://poser.pugx.org/kolyunya/string-processor/license)](https://packagist.org/packages/kolyunya/string-processor)
+[![Total Downloads](https://poser.pugx.org/kolyunya/string-processor/downloads)](https://packagist.org/packages/kolyunya/string-processor)
+
 ## Description
 This library provides a collection of string processors.
 
 ## Installation
-
 This library is [composer-enabled](https://packagist.org/packages/kolyunya/string-processor). The recommended way of using it in your project is to require it in your `composer.json`.
 ~~~
 "require": {
