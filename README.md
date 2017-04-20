@@ -11,11 +11,9 @@
 This library provides a collection of string processors.
 
 ## Installation
-This library is [composer-enabled](https://packagist.org/packages/kolyunya/string-processor). The recommended way of using it in your project is to require it in your `composer.json`.
+This library is [composer-enabled](https://packagist.org/packages/kolyunya/string-processor). The recommended way of using it in your project is to require it via `composer`.
 ~~~
-"require": {
-    "kolyunya/string-processor": "*"
-}
+composer require kolyunya/string-processor
 ~~~
 
 ## Single processor usage
