@@ -1,6 +1,6 @@
 <?php
 
-namespace Kolyunya\StringProcessor\CaseSwitcher;
+namespace Kolyunya\StringProcessor\Tests\Translit;
 
 use Kolyunya\StringProcessor\Translit\RuEnTranslator;
 use Kolyunya\StringProcessor\Tests\ProcessorTestCase;
