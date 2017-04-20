@@ -1,6 +1,6 @@
 <?php
 
-namespace Kolyunya\StringProcessor\Format;
+namespace Kolyunya\StringProcessor\Tests\Purify;
 
 use Kolyunya\StringProcessor\Purify\AlphabeticalPurifier;
 use Kolyunya\StringProcessor\Tests\ProcessorTestCase;
