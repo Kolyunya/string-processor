@@ -25,15 +25,13 @@
         "php": ">=5.3 <8.0"
     },
     "require-dev": {
-        "phpunit/phpunit": ">=4.8",
-        "squizlabs/php_codesniffer": ">=2.8"
+        "phpunit/phpunit": ">=4.8 <6.0",
+        "squizlabs/php_codesniffer": ">=2.8 <3.0"
     },
     "autoload": {
         "psr-4": {
-            "Kolyunya\\StringProcessor\\": [
-                "sources",
-                "tests"
-            ]
+            "Kolyunya\\StringProcessor\\": "sources",
+            "Kolyunya\\StringProcessor\\Tests\\": "tests"
         }
     }
 }

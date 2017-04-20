@@ -3,7 +3,7 @@
 namespace Kolyunya\StringProcessor\CaseSwitcher;
 
 use Kolyunya\StringProcessor\Translit\RuEnTranslator;
-use Kolyunya\StringProcessor\ProcessorTestCase;
+use Kolyunya\StringProcessor\Tests\ProcessorTestCase;
 
 class RuEnTranslatorTest extends ProcessorTestCase
 {

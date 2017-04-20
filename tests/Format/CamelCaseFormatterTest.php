@@ -1,9 +1,9 @@
 <?php
 
-namespace Kolyunya\StringProcessor\Format;
+namespace Kolyunya\StringProcessor\Tests\Format;
 
 use Kolyunya\StringProcessor\Format\CamelCaseFormatter;
-use Kolyunya\StringProcessor\ProcessorTestCase;
+use Kolyunya\StringProcessor\Tests\ProcessorTestCase;
 
 class CamelCaseFormatterTest extends ProcessorTestCase
 {
@@ -20,6 +20,14 @@ class CamelCaseFormatterTest extends ProcessorTestCase
         $this->performTest(
             'SomeTextInCamelCase',
             'SomeTextInCamelCase'
+        );
+    }
+
+    public function testFromKebabCaseInUnicode()
+    {
+        $this->performTest(
+            'привет-мир-как-дела',
+            'ПриветМирКакДела'
         );
     }
 
