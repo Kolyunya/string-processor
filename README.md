@@ -1,4 +1,4 @@
-# PHP string procession library
+# PHP string processing library
 
 ## Description
 This library provides a collection of string processors.
