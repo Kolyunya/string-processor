@@ -1,4 +1,4 @@
-# PHP string procession library
+# PHP string processing library
 
 ## Status
 [![Build Status](https://travis-ci.org/Kolyunya/string-processor.svg?branch=master)](https://travis-ci.org/Kolyunya/string-processor)
